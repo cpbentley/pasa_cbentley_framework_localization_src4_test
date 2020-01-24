@@ -1,0 +1,5 @@
+#descriptor of the formatting
+TestUnitApp
+Bonjour
+Ceci est un test
+Sortie
