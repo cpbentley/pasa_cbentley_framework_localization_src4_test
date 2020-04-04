@@ -2,7 +2,8 @@ package mordan.tests.app;
 
 import pasa.cbentley.byteobjects.src4.ctx.BOCtx;
 import pasa.cbentley.core.src4.i8n.LocaleID;
-import pasa.cbentley.framework.localization.src4.ctx.StrLoaderCtx;
+import pasa.cbentley.framework.localization.src4.ctx.ConfigLocDefault;
+import pasa.cbentley.framework.localization.src4.ctx.LocalizationCtx;
 import pasa.cbentley.framework.localization.src4.engine.StrLoader;
 import pasa.cbentley.framework.localization.src4.engine.StrLocal;
 import pasa.cbentley.powerdata.src4.ctx.PDCtx;
@@ -35,7 +36,8 @@ public class TestStrLoader extends BentleyTestCase {
 
       BOCtx boc = new BOCtx(uc);
       PDCtx pdc = new PDCtx(uc, boc);
-      StrLoaderCtx slc = new StrLoaderCtx(uc, boc, pdc, lids);
+      ConfigLocDefault configLoc = new ConfigLocDefault(uc);
+      LocalizationCtx slc = new LocalizationCtx(configLoc, uc, boc, pdc);
       StrLoader sl = slc.getLoader();
 
       BoTest1 bt = new BoTest1(uc);
