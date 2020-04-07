@@ -7,14 +7,14 @@ import pasa.cbentley.framework.localization.src4.ctx.LocalizationCtx;
 import pasa.cbentley.framework.localization.src4.engine.StrLoader;
 import pasa.cbentley.framework.localization.src4.engine.StrLocal;
 import pasa.cbentley.powerdata.src4.ctx.PDCtx;
-import pasa.cbentley.testing.BentleyTestCase;
+import pasa.cbentley.testing.engine.TestCaseBentley;
 
 /**
  * This can be tested alone
  * @author Mordan
  *
  */
-public class TestStrLoader extends BentleyTestCase {
+public class TestStrLoader extends TestCaseBentley {
 
    public static final int STR_0_TITLE_0   = StrLoader.getID(BoTest1.MODULE_ID, 0);
 
