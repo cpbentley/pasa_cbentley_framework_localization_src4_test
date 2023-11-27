@@ -4,6 +4,7 @@ import pasa.cbentley.byteobjects.src4.ctx.BOCtx;
 import pasa.cbentley.core.src4.i8n.LocaleID;
 import pasa.cbentley.framework.localization.src4.ctx.ConfigLocDefault;
 import pasa.cbentley.framework.localization.src4.ctx.LocalizationCtx;
+import pasa.cbentley.framework.localization.src4.engine.LocUtils;
 import pasa.cbentley.framework.localization.src4.engine.StrLoader;
 import pasa.cbentley.framework.localization.src4.engine.StrLocal;
 import pasa.cbentley.powerdata.src4.ctx.PDCtx;
@@ -16,13 +17,13 @@ import pasa.cbentley.testing.engine.TestCaseBentley;
  */
 public class TestStrLoader extends TestCaseBentley {
 
-   public static final int STR_0_TITLE_0   = StrLoader.getID(BoTest1.MODULE_ID, 0);
+   public static final int STR_0_TITLE_0   = LocUtils.getID(BoTest1.MODULE_ID, 0);
 
-   public static final int STR_1_HELLO     = StrLoader.getID(BoTest1.MODULE_ID, 1);
+   public static final int STR_1_HELLO     = LocUtils.getID(BoTest1.MODULE_ID, 1);
 
-   public static final int STR_2_THIS_TEST = StrLoader.getID(BoTest1.MODULE_ID, 2);
+   public static final int STR_2_THIS_TEST = LocUtils.getID(BoTest1.MODULE_ID, 2);
 
-   public static final int STR_3_EXIT      = StrLoader.getID(BoTest1.MODULE_ID, 3);
+   public static final int STR_3_EXIT      = LocUtils.getID(BoTest1.MODULE_ID, 3);
 
    public TestStrLoader() {
 
@@ -115,11 +116,11 @@ public class TestStrLoader extends TestCaseBentley {
       sl.loads(b2, "strings_over");
       sl.loads(b3, "strings_over2");
 
-      int STR_OVER_SEVEN = StrLoader.getID(b2.MODULE_ID, 6);
+      int STR_OVER_SEVEN = LocUtils.getID(b2.MODULE_ID, 6);
 
       assertEquals("Hello", sl.get(STR_1_HELLO).getStr());
       assertEquals("Seven", sl.get(STR_OVER_SEVEN).getStr());
-      assertEquals("Seven2", sl.get(StrLoader.getID(b3.MODULE_ID, 6)).getStr());
+      assertEquals("Seven2", sl.get(LocUtils.getID(b3.MODULE_ID, 6)).getStr());
 
    }
 
@@ -162,10 +163,10 @@ public class TestStrLoader extends TestCaseBentley {
    }
 
    public void testIDs() {
-      assertEquals(524353536, StrLoader.getID(BoTest1.MODULE_ID, 0));
+      assertEquals(524353536, LocUtils.getID(BoTest1.MODULE_ID, 0));
 
-      assertEquals(65537, StrLoader.getID(1, 1));
-      assertEquals(65536, StrLoader.getID(1, 0));
+      assertEquals(65537, LocUtils.getID(1, 1));
+      assertEquals(65536, LocUtils.getID(1, 0));
 
    }
 
